@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Left" Margin="359,179,0,0" VerticalAlignment="Top"/>
+        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Height="47"/>
 
 
 
