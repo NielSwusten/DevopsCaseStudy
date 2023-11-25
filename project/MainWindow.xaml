@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22" Height="47"/>
+        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" Height="47" Margin="0,40,0,0"/>
+        <Button Content="TETRIS" HorizontalAlignment="Left" Margin="123,118,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
 
 

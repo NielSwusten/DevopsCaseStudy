@@ -1,17 +1,17 @@
-﻿<Window x:Class="project.MainWindow"
+﻿<Window x:Class="project.Window1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Window1" Height="450" Width="800">
     <Grid RenderTransformOrigin="0.501,0.53">
         <Button Content="Login&#xD;&#xA;" HorizontalAlignment="Center" Margin="0,340,0,0" VerticalAlignment="Top" Click="Button_Click" Width="60" Height="30" BorderBrush="#FF9C9C9C" Background="#FFA0F8FF" FontWeight="Bold" FontSize="16"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" Name="textbox1"/>
         <Label Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="337,149,0,0" VerticalAlignment="Top" Height="33"/>
         <Label Content="Password&#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="337,239,0,0" VerticalAlignment="Top" Height="26"/>
-        <TextBox HorizontalAlignment="Center" Margin="0,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="25" Name="textbox2"/>
 
     </Grid>
 </Window>

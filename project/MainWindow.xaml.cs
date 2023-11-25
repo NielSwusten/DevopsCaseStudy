@@ -20,5 +20,23 @@ namespace project
         {
             InitializeComponent();
         }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            tetris tetris = new tetris();
+            tetris.Show();
+            Close();
+
+
+        }
+
+
+
     }
+
+
+
+          
 }
+
