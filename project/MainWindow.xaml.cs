@@ -31,8 +31,14 @@ namespace project
 
         }
 
+        private void highscores(object sender, RoutedEventArgs e)
+        {
 
+            highscores highscores = new highscores();
+            highscores.Show();
+            Close();
 
+        }
     }
 
 

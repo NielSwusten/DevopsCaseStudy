@@ -18,6 +18,7 @@ namespace project
         }
 
         public DbSet<User> Users { get; set; }
+
     }
 }
 

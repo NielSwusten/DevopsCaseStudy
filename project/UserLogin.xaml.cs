@@ -36,15 +36,25 @@ namespace project
             using (UserDataContext context = new UserDataContext()) 
             {
 
+
+
+
                 bool userfound = context.Users.Any(user => user.Name == Username && user.Password == Password);
+
+                var user = context.Users.SingleOrDefault(user => user.Name == Username);
+
 
                 if (userfound)
                 {
                     GrantAccess();
                     Close();
+                    MessageBox.Show($"Welcome, {Username}!\nYour Highscore: {user.scores}");
+
                 }
                 else
                 {
+
+
                     MessageBox.Show("Invalid Username or Password");
                 }
 
@@ -57,6 +67,9 @@ namespace project
         {
             MainWindow main = new MainWindow();
             main.Show();
+
+
+
         }
     }
 }
