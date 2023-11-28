@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static System.Formats.Asn1.AsnWriter;
 namespace project
 {
     /// <summary>
@@ -299,6 +303,17 @@ namespace project
             }
         }
 
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
+            Close();
+
+
+        }
+
+
         // Add new shape tetromino in grid
         private void addShape(int shapeNumber, int _left = 0, int _down = 0)
         {
@@ -578,6 +593,12 @@ namespace project
         // The game over reset
         private void gameOver()
         {
+            using (var dbContext = new UserDataContext())
+            {
+                    dbContext.InsertScore(6,"Pablo", gameScore);
+                }
+
+
             isGameOver = true;
             reset();
             startStopBtn.Content = "Start Game";
