@@ -22,11 +22,18 @@ namespace project
         }
 
 
+        private void Button_ClickGuess(object sender, RoutedEventArgs e)
+        {
+            GuessGame GuessGame = new GuessGame();
+            GuessGame.Show();
+            Close();
+
+
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            tetris tetris = new tetris();
-            tetris.Show();
-            Close();
+           
 
 
         }
