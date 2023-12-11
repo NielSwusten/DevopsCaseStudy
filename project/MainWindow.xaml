@@ -9,16 +9,25 @@
 
 
 
-    <Grid>
-        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="22" Height="47" Margin="0,40,0,0"/>
-        <Image x:Name="Tetris" HorizontalAlignment="Left" Height="100" Margin="205,127,0,0" VerticalAlignment="Top" Width="100" Source="/images/tetris.jpg" />
+    <Grid Background="Black">
+        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top"  FontSize="22" Height="47" Margin="0,37,0,0" Foreground="White"/>
 
         <Button HorizontalAlignment="Left" Margin="200,127,0,0" VerticalAlignment="Top" Click="Button_ClickGuess" Height="100" Width="100"  Cursor="Hand" IsDefault="True">
             <StackPanel Orientation="Horizontal">
                 <Image Source="images/Guess.jpg" Width="100" Height="100" />
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="500,127,0,0" VerticalAlignment="Top" Click="Button_Click" Height="106" Width="108" Cursor="Hand" IsDefault="True"/>
+        <Label Content="Guess Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="200,232,0,0" Foreground="White"/>
+
+
+        <Button HorizontalAlignment="Left" Margin="500,127,0,0" VerticalAlignment="Top" Click="Button_ClickMath" Height="106" Width="108" Cursor="Hand" IsDefault="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="images/mathgame.jpg" Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Label Content="Math Game
+               &#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="506,238,0,0" Foreground="White" Width="96"/>
+
 
 
         <Button Content="Highscores" HorizontalAlignment="Left" Margin="660,23,0,0" VerticalAlignment="Top" Click="highscores" Height="27" Width="108" Background="#FF9CF8F4" Foreground="#FF5F5656" FontWeight="Bold" />

@@ -31,9 +31,11 @@ namespace project
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_ClickMath(object sender, RoutedEventArgs e)
         {
-           
+            MathGame MathGame = new MathGame();
+            MathGame.Show();
+            Close();
 
 
         }
