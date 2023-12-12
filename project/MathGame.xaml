@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="MathGame" Height="450" Width="800">
+        Title="MathGame" Height="450" Width="801">
     <Grid>
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="{Binding MathProblem}" FontSize="18" Margin="0 0 0 10"/>
