@@ -31,7 +31,7 @@ namespace project
         {
 
             var Username = textbox1.Text;
-            var Password = textbox2.Text;
+            var Password = textbox2.Password;
 
             using (UserDataContext context = new UserDataContext()) 
             {
