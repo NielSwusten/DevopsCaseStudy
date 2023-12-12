@@ -38,6 +38,19 @@ namespace project
             Close();
 
 
+
+ 
+        }
+
+        private void Button_ClickReaction(object sender, RoutedEventArgs e)
+        {
+            ReactionGame ReactionGame = new ReactionGame();
+            ReactionGame.Show();
+            Close();
+
+
+
+            
         }
 
         private void highscores(object sender, RoutedEventArgs e)

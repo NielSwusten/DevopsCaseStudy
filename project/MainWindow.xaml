@@ -28,6 +28,13 @@
         <Label Content="Math Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="506,238,0,0" Foreground="White" Width="96"/>
 
 
+        <Button HorizontalAlignment="Left" Margin="200,280,0,0" VerticalAlignment="Top" Click="Button_ClickReaction" Height="106" Width="108" Cursor="Hand" IsDefault="True">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="images/reactiongame.png" Width="100" Height="100" />
+            </StackPanel>
+        </Button>
+        <Label Content="Reaction game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="195,388,0,0" Foreground="White" Width="124"/>
+
 
         <Button Content="Highscores" HorizontalAlignment="Left" Margin="660,23,0,0" VerticalAlignment="Top" Click="highscores" Height="27" Width="108" Background="#FF9CF8F4" Foreground="#FF5F5656" FontWeight="Bold" />
 

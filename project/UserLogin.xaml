@@ -21,7 +21,6 @@
         </Border>
         <TextBlock Text="GameToy" FontSize="24" FontWeight="Bold" Foreground="LightGray" Margin="53,282,188,190"/>
 
-        <!-- D-pad (Cross) button -->
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="53,0,0,52">
             <Grid>
                 <Ellipse Width="90" Height="90" Fill="#AEDCC6"/>
@@ -30,7 +29,6 @@
             </Grid>
         </StackPanel>
 
-        <!-- A and B buttons (round) -->
         <StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,20">
             <Button  Content="A" Width="60" Height="60" Background="#AEDCC6" Foreground="Black" BorderThickness="0" Margin="0,0,0,10"/>
 
