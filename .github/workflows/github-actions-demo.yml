@@ -12,7 +12,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '3.1.404' # Update to a version that supports .NET 8.0
+        dotnet-version: '4.8,1' # Update to a version that supports .NET 8.0
     
     - name: Restore dependencies
       run: dotnet restore
@@ -21,13 +21,13 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Publish artifact
-      run: dotnet publish -c Release -o $(Build.ArtifactStagingDirectory)
+      run: dotnet publish -c Release -o ${{ github.workspace }}/bin/Release/net8.0-windows/publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: MyApp
-        path: ${{ github.workspace }}/bin/Release/netcoreapp3.1/publish
+        path: ${{ github.workspace }}/bin/Release/net8.0-windows/publish
 
   deploy:
     needs: build
