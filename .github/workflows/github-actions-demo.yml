@@ -14,8 +14,6 @@ jobs:
       with:
         dotnet-version: '3.1'
 
-    - name: Restore NuGet packages
-      run: dotnet restore
 
     - name: Build the WPF App
       run: dotnet build -c Release -o ./bin
