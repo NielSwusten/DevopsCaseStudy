@@ -9,19 +9,10 @@ jobs:
     - name: Checkout repository code
       uses: actions/checkout@v2
 
-    - name: Set up .NET Core SDK
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '5.0.402'
-
-    - name: Restore NuGet packages
-      run: dotnet restore
-
-    - name: Build the WPF App
-      run: dotnet build -c Release -o ./bin
-
-    - name: Copy artifacts
-      run: cp -r ./bin ${{ github.workspace }}/artifacts
+    - name: Copy project as artifact
+      run: |
+        # Copy the entire project directory to the artifacts folder
+        cp -r . ${{ github.workspace }}/artifacts
 
     - name: Publish artifacts
       uses: actions/upload-artifact@v2
