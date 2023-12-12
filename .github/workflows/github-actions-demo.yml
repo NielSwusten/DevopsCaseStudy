@@ -12,8 +12,10 @@ jobs:
     - name: Set up .NET Core SDK
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '3.1'
+        dotnet-version: '5.0.x'  # Use a version supported by your project
 
+    - name: Restore NuGet packages
+      run: dotnet restore
 
     - name: Build the WPF App
       run: dotnet build -c Release -o ./bin
