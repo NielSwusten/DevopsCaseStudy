@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="801">
+        Title="MainWindow" Height="450" Width="800">
 
 
 
@@ -25,8 +25,7 @@
                 <Image Source="images/mathgame.jpg" Width="100" Height="100" />
             </StackPanel>
         </Button>
-        <Label Content="Math Game
-               &#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="506,238,0,0" Foreground="White" Width="96"/>
+        <Label Content="Math Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="506,238,0,0" Foreground="White" Width="96"/>
 
 
 
