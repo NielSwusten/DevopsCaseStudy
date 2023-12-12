@@ -6,18 +6,37 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository code
+    - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Copy project as artifact
-      run: |
-        # Copy the entire project directory to the artifacts folder
-        cp -r . ${{ github.workspace }}/artifacts
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '3.1.404' # or the version you are using
 
-    - name: Publish artifacts
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build
+      run: dotnet build --configuration Release
+
+    - name: Publish artifact
+      run: dotnet publish -c Release -o $(Build.ArtifactStagingDirectory)
+
+    - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: my-wpf-app-artifacts
-        path: ${{ github.workspace }}/artifacts
+        name: MyApp
+        path: ${{ github.workspace }}/bin/Release/netcoreapp3.1/publish
 
+  deploy:
+    needs: build
+    runs-on: windows-latest
+
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: MyApp
+        path: ${{ github.workspace }}/artifacts
       
