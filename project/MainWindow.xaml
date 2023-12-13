@@ -6,39 +6,37 @@
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="801">
+    <Grid Background="#4F6B5D">
 
 
+        <Border BorderBrush="#434343" BorderThickness="10" CornerRadius="15" Background="#8FBF9F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="680" Height="400" Margin="0,10,0,0"> <!-- Screen-like border -->
+        <Grid Background="#8FBF9F">
 
-    <Grid Background="Black">
-        <Label Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top"  FontSize="22" Height="47" Margin="0,37,0,0" Foreground="White"/>
+                <Label x:Name="welcomeLabel" Content="Welcome&#xD;&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top"  FontSize="30" Height="47" Margin="0,37,0,0" Foreground="White" FontWeight="Bold"/>
 
-        <Button HorizontalAlignment="Left" Margin="200,127,0,0" VerticalAlignment="Top" Click="Button_ClickGuess" Height="100" Width="100"  Cursor="Hand" IsDefault="True">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="images/Guess.jpg" Width="100" Height="100" />
-            </StackPanel>
-        </Button>
-        <Label Content="Guess Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="200,232,0,0" Foreground="White"/>
+            <Button HorizontalAlignment="Left" Margin="160,110,0,0" VerticalAlignment="Top" Click="Button_ClickGuess" Height="100" Width="100"  Cursor="Hand" IsDefault="True">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="images/Guess.jpg" Width="100" Height="100" Opacity="0.7" />
+                </StackPanel>
+            </Button>
+            <Label Content="Guess Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="157,210,0,0" Foreground="White" />
 
+            <Button HorizontalAlignment="Left" Margin="380,110,0,0" VerticalAlignment="Top" Click="Button_ClickMath" Height="100" Width="100" Cursor="Hand" IsDefault="True">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="images/mathgame.jpg" Width="100" Height="100" Opacity="0.7" />
+                </StackPanel>
+            </Button>
+            <Label Content="Math Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="382,210,0,0" Foreground="White" Width="98"/>
 
-        <Button HorizontalAlignment="Left" Margin="500,127,0,0" VerticalAlignment="Top" Click="Button_ClickMath" Height="106" Width="108" Cursor="Hand" IsDefault="True">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="images/mathgame.jpg" Width="100" Height="100" />
-            </StackPanel>
-        </Button>
-        <Label Content="Math Game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="506,238,0,0" Foreground="White" Width="96"/>
+            <Button HorizontalAlignment="Left" Margin="160,250,0,0" VerticalAlignment="Top" Click="Button_ClickReaction" Height="106" Width="108" Cursor="Hand" IsDefault="True">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="images/reactiongame.png" Width="100" Height="100" Opacity="0.7" />
+                </StackPanel>
+            </Button>
+            <Label Content="Reaction game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="153,352,0,0" Foreground="White" Width="124"/>
 
-
-        <Button HorizontalAlignment="Left" Margin="200,280,0,0" VerticalAlignment="Top" Click="Button_ClickReaction" Height="106" Width="108" Cursor="Hand" IsDefault="True">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="images/reactiongame.png" Width="100" Height="100" />
-            </StackPanel>
-        </Button>
-        <Label Content="Reaction game&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="17" Height="36" Margin="195,388,0,0" Foreground="White" Width="124"/>
-
-
-        <Button Content="Highscores" HorizontalAlignment="Left" Margin="660,23,0,0" VerticalAlignment="Top" Click="highscores" Height="27" Width="108" Background="#FF9CF8F4" Foreground="#FF5F5656" FontWeight="Bold" />
-
-
-
+            <Button Content="Highscores" HorizontalAlignment="Left" Margin="520,30,0,0" VerticalAlignment="Top" Click="highscores" Height="27" Width="108" Background="#FF9CF8F4" Foreground="#FF5F5656" FontWeight="Bold" />
+        </Grid>
+    </Border>
     </Grid>
 </Window>

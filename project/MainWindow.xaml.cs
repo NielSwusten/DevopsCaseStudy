@@ -16,15 +16,29 @@ namespace project
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+
+        private readonly string userName;
+
+
+        public MainWindow(string userName)
         {
             InitializeComponent();
+            this.userName = userName;
+            UpdateWelcomeLabel();
+
         }
+
+        private void UpdateWelcomeLabel()
+        {
+            // Set the welcome label text including the user's name
+            welcomeLabel.Content = $"Welcome, {userName}!";
+        }
+
 
 
         private void Button_ClickGuess(object sender, RoutedEventArgs e)
         {
-            GuessGame GuessGame = new GuessGame();
+            GuessGame GuessGame = new GuessGame(userName);
             GuessGame.Show();
             Close();
 
@@ -33,7 +47,7 @@ namespace project
 
         private void Button_ClickMath(object sender, RoutedEventArgs e)
         {
-            MathGame MathGame = new MathGame();
+            MathGame MathGame = new MathGame(userName);
             MathGame.Show();
             Close();
 
@@ -44,7 +58,7 @@ namespace project
 
         private void Button_ClickReaction(object sender, RoutedEventArgs e)
         {
-            ReactionGame ReactionGame = new ReactionGame();
+            ReactionGame ReactionGame = new ReactionGame(userName);
             ReactionGame.Show();
             Close();
 

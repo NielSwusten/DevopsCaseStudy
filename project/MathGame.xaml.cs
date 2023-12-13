@@ -26,6 +26,8 @@ namespace project
         private int operand2;
         private string operatorString;
         private string mathProblem;
+        private string username;
+
 
         public string MathProblem
         {
@@ -47,10 +49,11 @@ namespace project
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public MathGame()
+        public MathGame(string username)
         {
             InitializeComponent();
             DataContext = this; // Set the DataContext to the current instance of MainWindow
+            this.username = username; // Store the username for later use
             GenerateMathProblem();
         }
 
@@ -128,7 +131,7 @@ namespace project
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow MainWindow = new MainWindow();
+            MainWindow MainWindow = new MainWindow(username);
             MainWindow.Show();
             Close();
 

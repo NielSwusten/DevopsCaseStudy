@@ -8,8 +8,7 @@ namespace project
         public int Id { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public int scores { get; set; } 
-
+        public double FastestTime { get; set; } // Add this property
     }
 
     public class highscore
@@ -18,6 +17,16 @@ namespace project
         public int Id { get; set; }
         public int score { get; set; }
         public string name { get; set; }
+
+    }
+
+
+    public class FastestTime
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public double Time { get; set; } // Assuming time is in milliseconds
 
     }
 }

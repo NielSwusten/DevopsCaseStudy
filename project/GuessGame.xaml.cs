@@ -20,9 +20,11 @@ namespace project
     public partial class GuessGame : Window
     {
         private int secretNumber;
-        public GuessGame()
+        private string username;
+        public GuessGame(string username)
         {
             InitializeComponent();
+            this.username = username; // Store the username for later use
             InitializeGame();
         }
 
@@ -67,7 +69,7 @@ namespace project
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow MainWindow = new MainWindow();
+            MainWindow MainWindow = new MainWindow(username);
             MainWindow.Show();
             Close();
 

@@ -46,9 +46,9 @@ namespace project
 
                 if (userfound)
                 {
-                    GrantAccess();
+                    GrantAccess(Username);
                     Close();
-                    MessageBox.Show($"Welcome, {Username}!\nYour Highscore: {user.scores}");
+                    MessageBox.Show($"Welcome, {Username}!");
 
                 }
                 else
@@ -63,14 +63,14 @@ namespace project
         }
 
 
-        public void GrantAccess()
+        private void GrantAccess(string username)
         {
-            MainWindow main = new MainWindow();
+            // Pass the user's name to MainWindow constructor
+            MainWindow main = new MainWindow(username);
             main.Show();
-
-
-
         }
+
     }
 }
+
 

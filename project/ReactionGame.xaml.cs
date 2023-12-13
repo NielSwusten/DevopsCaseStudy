@@ -22,11 +22,22 @@ namespace project
     {
         private Random random = new Random();
         private Stopwatch stopwatch = new Stopwatch();
+        private string username;
+        private double fastestTime = 9999990;
+
         public ReactionGame()
         {
             InitializeComponent();
             reactionButton.Visibility = Visibility.Hidden;
+            this.username = "Obama";
+            StartGame();
+        }
 
+        public ReactionGame(string username)
+        {
+            InitializeComponent();
+            reactionButton.Visibility = Visibility.Hidden;
+            this.username = username; // Store the username for later use
             StartGame();
         }
 
@@ -65,6 +76,31 @@ namespace project
                 stopwatch.Stop();
                 MessageBox.Show($"Your reaction time: {stopwatch.ElapsedMilliseconds} milliseconds", "Game Over");
 
+                if (stopwatch.ElapsedMilliseconds < fastestTime)
+                {
+                    fastestTime = stopwatch.ElapsedMilliseconds;
+
+                    // Save the fastest time to the database
+                    using (var context = new UserDataContext())
+                    {
+                        var fastestTimeEntry = new FastestTime
+                        {
+                            Id = 1,
+                            Name = username,
+                            Time = fastestTime
+                        };
+
+                        context.FastestTime.Add(fastestTimeEntry);
+                        context.SaveChanges();
+                    }
+
+                    // Update the FastestTime property in the Users table
+                    UpdateUserFastestTime(username, fastestTime);
+                }
+
+                MessageBox.Show($"fastest: {fastestTime} milliseconds");
+
+
                 reactionButton.Visibility = Visibility.Hidden;
                 reactiontext.Visibility = Visibility.Visible;
                 await Task.Delay(500);
@@ -72,9 +108,28 @@ namespace project
             }
         }
 
+
+        private void UpdateUserFastestTime(string username, double fastestTime)
+        {
+            using (var context = new UserDataContext())
+            {
+                // Retrieve the user from the Users table
+                var user = context.Users.FirstOrDefault(u => u.Name == username);
+
+                if (user != null && fastestTime < user.FastestTime)
+                {
+                    // Update the FastestTime property
+                    user.FastestTime = fastestTime;
+
+                    // Save the changes to the database
+                    context.SaveChanges();
+                }
+            }
+        }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow MainWindow = new MainWindow();
+            MainWindow MainWindow = new MainWindow(username);
             MainWindow.Show();
             Close();
         }
