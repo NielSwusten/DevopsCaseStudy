@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
         Title="MathGame" Height="450" Width="801">
-    <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid Background="#4F6B5D">
+
+
+        <Border BorderBrush="#434343" BorderThickness="10" CornerRadius="15" Background="#8FBF9F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="680" Height="400" Margin="0,10,0,0">
+            <!-- Screen-like border -->
+            <Grid Background="#8FBF9F">
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="{Binding MathProblem}" FontSize="18" Margin="0 0 0 10"/>
             <TextBox Name="answerTextBox" Width="100" Margin="0 0 0 10"/>
             <Button Content="Submit Answer" Click="SubmitAnswer_Click"/>
@@ -15,7 +20,9 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-            <Button Content="Back" Click="BackButton_Click" Margin="571,336,120,63" Height="22" Width="56" />
+                    <local:CustomButton Content="Back" Click="BackButton_Click" Margin="480,336,120,63" Height="22" Width="56" />
         </StackPanel>
+            </Grid>
+        </Border>
     </Grid>
 </Window>

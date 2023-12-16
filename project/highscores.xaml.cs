@@ -19,13 +19,34 @@ namespace project
     /// </summary>
     public partial class highscores : Window
     {
-        public highscores()
+        private string username;
+
+        public highscores(string username)
         {
             InitializeComponent();
+            LoadFastestTimes();
+            this.username = username;
+
         }
 
+        private void LoadFastestTimes()
+        {
+            using (var context = new UserDataContext())
+            {
+                var fastestTime = context.FastestTime.OrderBy(ft => ft.Time).FirstOrDefault();
+                if (fastestTime != null)
+                {
+                    fastestTimesDataGrid.ItemsSource = new List<FastestTime> { fastestTime };
+                }
+            }
+        }
 
-
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainWindow = new MainWindow(username);
+            MainWindow.Show();
+            Close();
+        }
 
     }
 }

@@ -14,27 +14,24 @@ using System.Windows.Shapes;
 
 namespace project
 {
-    /// <summary>
-    /// Interaction logic for GuessGame.xaml
-    /// </summary>
+
     public partial class GuessGame : Window
     {
         private int secretNumber;
         private string username;
+
         public GuessGame(string username)
         {
             InitializeComponent();
-            this.username = username; // Store the username for later use
+            this.username = username; 
             InitializeGame();
         }
 
         private void InitializeGame()
         {
-            // Generate a random number between 1 and 100
             Random rand = new Random();
             secretNumber = rand.Next(1, 101);
 
-            // Clear previous results
             resultLabel.Content = "";
             guessTextBox.Text = "";
         }
@@ -43,16 +40,14 @@ namespace project
         {
             try
             {
-                // Get user's guess
                 int userGuess = int.Parse(guessTextBox.Text);
 
-                // Check if the guess is correct
                 if (userGuess == secretNumber)
                 {
                     resultLabel.Content = "Congratulations! You guessed the correct number.";
-                    await Task.Delay(3000);
+                    await Task.Delay(2500);
 
-                    InitializeGame(); // Start a new game
+                    InitializeGame(); 
                 }
                 else
                 {

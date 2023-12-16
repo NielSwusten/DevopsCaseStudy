@@ -37,7 +37,7 @@ namespace project
         {
             InitializeComponent();
             reactionButton.Visibility = Visibility.Hidden;
-            this.username = username; // Store the username for later use
+            this.username = username;
             StartGame();
         }
 

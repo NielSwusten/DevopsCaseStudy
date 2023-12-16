@@ -48,7 +48,6 @@ namespace project
                 {
                     GrantAccess(Username);
                     Close();
-                    MessageBox.Show($"Welcome, {Username}!");
 
                 }
                 else

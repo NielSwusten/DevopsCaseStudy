@@ -7,7 +7,20 @@
         mc:Ignorable="d"
         Title="highscores" Height="450" Width="800">
     <Grid>
-        <Label Content="HIGH SCORES" HorizontalAlignment="Center" Margin="0,33,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+        <Label Content="HIGH SCORES" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
+        <DataGrid x:Name="fastestTimesDataGrid" AutoGenerateColumns="False" Margin="10,37,10,10" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Fastest Time (ms)" Binding="{Binding Time}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <local:CustomButton Content="Back" Click="BackButton_Click" Margin="571,336,120,63" Height="22" Width="56" />
+        </StackPanel>
     </Grid>
+    
+    
 </Window>
+

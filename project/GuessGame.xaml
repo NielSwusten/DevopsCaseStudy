@@ -6,11 +6,16 @@
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
         Title="GuessGame" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#4F6B5D">
 
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <Border BorderBrush="#434343" BorderThickness="10" CornerRadius="15" Background="#8FBF9F" HorizontalAlignment="Center" VerticalAlignment="Top" Width="680" Height="400" Margin="0,10,0,0">
+            <!-- Screen-like border -->
+            <Grid Background="#8FBF9F">
+
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock Text="Guess the Number Game" FontWeight="Bold" FontSize="18" Margin="0 0 0 10"/>
-            <Label Content="Enter your guess:"/>
+            <Label Content="Enter your guess:" Width="99"/>
             <TextBox Name="guessTextBox" Width="100" Margin="0 0 0 10"/>
             <Button Content="Submit Guess" Click="SubmitGuess_Click" Width="91"/>
             <Label Name="resultLabel" Content=""/>
@@ -18,9 +23,10 @@
         </StackPanel>
 
         <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Button Content="Back" Click="BackButton_Click" Margin="571,336,120,63" Height="22" Width="56" />
+                    <local:CustomButton Content="Back" Click="BackButton_Click" Margin="470,336,120,63" Height="22" Width="56" />
         </StackPanel>
 
-
+    </Grid>
+    </Border>
     </Grid>
 </Window>
