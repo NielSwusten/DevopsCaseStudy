@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace project
 {
-    /// <summary>
+    /// <summarys>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
