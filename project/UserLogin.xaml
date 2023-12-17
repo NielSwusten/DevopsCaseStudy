@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:project"
         mc:Ignorable="d"
-        Title="GameToy Login" Height="520" Width="360">
+        Title="GameToy Login" Height="520" Width="361">
     <Grid Background="#4F6B5D">
         <StackPanel VerticalAlignment="Top" Margin="0,20,0,0"/>
 
