@@ -26,7 +26,8 @@ jobs:
       run: dotnet publish -c Release -o ${{ github.workspace }}/bin/Release/net8.0-windows/publish
 
     - name: Run Migrations
-      run: dotnet ef database update
+      run: dotnet ef database update --project YourProjectName
+      working-directory: ${{ github.workspace }}
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
