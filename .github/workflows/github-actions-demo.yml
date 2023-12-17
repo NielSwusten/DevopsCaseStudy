@@ -1,5 +1,9 @@
 name: Build and Package WPF App
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,8 +16,8 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '8.x.x' # Use a version that supports .NET 8.0
-    
+        dotnet-version: '6.x' # Use the appropriate version
+
     - name: Restore dependencies
       run: dotnet restore
 
@@ -21,13 +25,13 @@ jobs:
       run: dotnet build --configuration Release
 
     - name: Publish artifact
-      run: dotnet publish -c Release -o ${{ github.workspace }}/bin/Release/net8.0-windows/publish
+      run: dotnet publish -c Release -o ${{ github.workspace }}/bin/Release/net6.0-windows/publish
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
         name: MyApp
-        path: ${{ github.workspace }}/bin/Release/net8.0-windows/publish
+        path: ${{ github.workspace }}/bin/Release/net6.0-windows/publish
 
   deploy:
     needs: build
@@ -39,4 +43,3 @@ jobs:
       with:
         name: MyApp
         path: ${{ github.workspace }}/artifacts
-      
