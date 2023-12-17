@@ -13,8 +13,8 @@ jobs:
       with:
         dotnet-version: '8.x.x' # Use a version that supports .NET 8.0
 
-    - name: Run Migrations
-      run: dotnet ef database update
+    - name: Install Entity Framework Core tools
+      run: dotnet tool install --global dotnet-ef --version 6.x.x
     
     - name: Restore dependencies
       run: dotnet restore
@@ -24,6 +24,9 @@ jobs:
 
     - name: Publish artifact
       run: dotnet publish -c Release -o ${{ github.workspace }}/bin/Release/net8.0-windows/publish
+
+    - name: Run Migrations
+      run: dotnet ef database update
 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
